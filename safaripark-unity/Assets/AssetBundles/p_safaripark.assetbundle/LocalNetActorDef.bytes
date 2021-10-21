@@ -1,0 +1,853 @@
+{
+	"rooms": 
+		[
+			{
+				"r": "create_actors",
+				"actor_data": 
+					[
+						{
+							"actor_id": "Elephant_trumpeting",
+							"components": 
+								[
+									{
+										"type": "volume_trigger",
+										"volume_data": 
+											[
+												{
+													"collision_type": "box",
+													"center": 
+														[
+															-1.36268234,
+															3.29213452,
+															10.4282322
+														],
+													"extents": 
+														[
+															4.121006,
+															2.706814,
+															3.02501464
+														],
+													"rotation": 
+														[
+															3.184114,
+															49.4216156,
+															353.146271
+														]
+												}
+											],
+										"trigger_type": "local"
+									},
+									{
+										"type": "net_actor_node",
+										"inputs": 
+											[
+												{
+													"input_port": "Ele_trump_on",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "Ele_trump_on",
+																		"wrap_mode": "once",
+																		"switch_mode": "blend"
+																	}
+															}
+														]
+												},
+												{
+													"input_port": "Ele_trump_off",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "Ele_trump_off",
+																		"wrap_mode": "loop"
+																	}
+															}
+														]
+												}
+											],
+										"outputs": 
+											[
+												{
+													"output_port": "volume_trigger_enter_first",
+													"cooldown": 2,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "Elephant_trumpeting",
+																"input_port": "Ele_trump_on"
+															}
+														]
+												},
+												{
+													"output_port": "volume_trigger_exit_all",
+													"cooldown": 2,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "Elephant_trumpeting",
+																"input_port": "Ele_trump_off"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												}
+											]
+									},
+									{
+										"type": "model",
+										"version": 1,
+										"game_asset_url": "sceneref://Room_0/Animals/Elephant_trumpeting"
+									}
+								],
+							"actions": 
+								[
+									{
+										"a": "position",
+										"o": 
+											[
+												13.49,
+												0.24,
+												-12.26
+											],
+										"uid": "local"
+									},
+									{
+										"a": "model_set_visible",
+										"uid": "local",
+										"p": 
+											{
+												"method": "Immediate",
+												"visible": true
+											}
+									}
+								]
+						},
+						{
+							"actor_id": "Hippo_Idle",
+							"components": 
+								[
+									{
+										"type": "volume_trigger",
+										"volume_data": 
+											[
+												{
+													"collision_type": "box",
+													"center": 
+														[
+															2.6454525,
+															1.48,
+															-1.62495708
+														],
+													"extents": 
+														[
+															4.000001,
+															2.43691826,
+															4.000001
+														],
+													"rotation": 
+														[
+															0,
+															81.94752,
+															0
+														]
+												}
+											],
+										"trigger_type": "local"
+									},
+									{
+										"type": "net_actor_node",
+										"inputs": 
+											[
+												{
+													"input_port": "on",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "random",
+																		"random_anims": 
+																			[
+																				"Idle01",
+																				"Eat",
+																				"Attack_Head",
+																				"Fight_Idle",
+																				"Attack_Jaw",
+																				"Attack"
+																			],
+																		"wrap_mode": "loop",
+																		"switch_method": "blend",
+																		"wait_method": "none"
+																	}
+															}
+														]
+												},
+												{
+													"input_port": "off",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "Idle01",
+																		"wrap_mode": "loop",
+																		"switch_method": "blend",
+																		"wait_method": "none"
+																	}
+															}
+														]
+												}
+											],
+										"outputs": 
+											[
+												{
+													"output_port": "volume_trigger_enter_first",
+													"cooldown": 0.5,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "Hippo_Idle",
+																"input_port": "on"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												},
+												{
+													"output_port": "volume_trigger_exit_all",
+													"cooldown": 0.5,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "Hippo_Idle",
+																"input_port": "off"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												}
+											]
+									},
+									{
+										"type": "model",
+										"version": 1,
+										"game_asset_url": "sceneref://Room_0/Animals/Hippo_Idle",
+										"edit_apartment_animation": "Idle01",
+										"idle_animation": "Idle01",
+										"idle_wrap_mode": "loop"
+									}
+								],
+							"actions": 
+								[
+									{
+										"a": "position",
+										"o": 
+											[
+												-21.48,
+												0.353,
+												13.953
+											],
+										"uid": "local"
+									},
+									{
+										"a": "model_set_visible",
+										"uid": "local",
+										"p": 
+											{
+												"method": "Immediate",
+												"visible": true
+											}
+									}
+								]
+						},
+						{
+							"actor_id": "Hippo_Idle (1)",
+							"components": 
+								[
+									{
+										"type": "volume_trigger",
+										"volume_data": 
+											[
+												{
+													"collision_type": "box",
+													"center": 
+														[
+															-1.52003038,
+															1.72491431,
+															-2.49685669
+														],
+													"extents": 
+														[
+															4.000003,
+															2.4369185,
+															4.00000238
+														],
+													"rotation": 
+														[
+															357.119568,
+															145.62677,
+															8.305626
+														]
+												}
+											],
+										"trigger_type": "local"
+									},
+									{
+										"type": "net_actor_node",
+										"inputs": 
+											[
+												{
+													"input_port": "on",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "random",
+																		"random_anims": 
+																			[
+																				"Idle01",
+																				"Eat",
+																				"Attack_Head",
+																				"Fight_Idle",
+																				"Attack_Jaw",
+																				"Attack"
+																			],
+																		"wrap_mode": "loop",
+																		"switch_method": "blend",
+																		"wait_method": "none"
+																	}
+															}
+														]
+												},
+												{
+													"input_port": "off",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "Idle01",
+																		"wrap_mode": "loop",
+																		"switch_method": "blend",
+																		"wait_method": "none"
+																	}
+															}
+														]
+												}
+											],
+										"outputs": 
+											[
+												{
+													"output_port": "volume_trigger_enter_first",
+													"cooldown": 0.5,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "Hippo_Idle (1)",
+																"input_port": "on"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												},
+												{
+													"output_port": "volume_trigger_exit_all",
+													"cooldown": 0.5,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "Hippo_Idle (1)",
+																"input_port": "off"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												}
+											]
+									},
+									{
+										"type": "model",
+										"version": 1,
+										"game_asset_url": "sceneref://Room_0/Animals/Hippo_Idle (1)",
+										"edit_apartment_animation": "Idle01",
+										"idle_animation": "Idle01",
+										"idle_wrap_mode": "loop"
+									}
+								],
+							"actions": 
+								[
+									{
+										"a": "position",
+										"o": 
+											[
+												3.15,
+												-0.03,
+												36.24
+											],
+										"uid": "local"
+									},
+									{
+										"a": "model_set_visible",
+										"uid": "local",
+										"p": 
+											{
+												"method": "Immediate",
+												"visible": true
+											}
+									}
+								]
+						},
+						{
+							"actor_id": "lioncub_lay 1",
+							"components": 
+								[
+									{
+										"type": "volume_trigger",
+										"volume_data": 
+											[
+												{
+													"collision_type": "box",
+													"center": 
+														[
+															-1.14599991,
+															0.9359999,
+															0.13999939
+														],
+													"extents": 
+														[
+															3.06000185,
+															2.43692136,
+															4.08000231
+														],
+													"rotation": 
+														[
+															5.6385187E-07,
+															302.251068,
+															1.38471435E-07
+														]
+												}
+											],
+										"trigger_type": "local"
+									},
+									{
+										"type": "net_actor_node",
+										"inputs": 
+											[
+												{
+													"input_port": "on",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "random",
+																		"random_anims": 
+																			[
+																				"lioncub_idle01",
+																				"lion_cub_idle02"
+																			],
+																		"wrap_mode": "loop",
+																		"switch_method": "blend",
+																		"wait_method": "none"
+																	}
+															}
+														]
+												},
+												{
+													"input_port": "off",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "lioncub_lay",
+																		"wrap_mode": "loop",
+																		"switch_method": "blend",
+																		"wait_method": "none"
+																	}
+															}
+														]
+												}
+											],
+										"outputs": 
+											[
+												{
+													"output_port": "volume_trigger_enter_first",
+													"cooldown": 0.5,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "lioncub_lay 1",
+																"input_port": "on"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												},
+												{
+													"output_port": "volume_trigger_exit_all",
+													"cooldown": 0.5,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "lioncub_lay 1",
+																"input_port": "off"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												}
+											]
+									},
+									{
+										"type": "model",
+										"version": 1,
+										"game_asset_url": "sceneref://Room_0/Animals/lioncub_lay 1",
+										"edit_apartment_animation": "lioncub_idle01",
+										"idle_animation": "lioncub_lay",
+										"idle_wrap_mode": "loop"
+									}
+								],
+							"actions": 
+								[
+									{
+										"a": "position",
+										"o": 
+											[
+												-18.319,
+												1.537,
+												-11.462
+											],
+										"uid": "local"
+									},
+									{
+										"a": "model_set_visible",
+										"uid": "local",
+										"p": 
+											{
+												"method": "Immediate",
+												"visible": true
+											}
+									}
+								]
+						},
+						{
+							"actor_id": "cheetah_king_mesh",
+							"components": 
+								[
+									{
+										"type": "volume_trigger",
+										"volume_data": 
+											[
+												{
+													"collision_type": "box",
+													"center": 
+														[
+															-0.328001022,
+															0.8729999,
+															1.48900032
+														],
+													"extents": 
+														[
+															2.89000177,
+															2.436919,
+															3.020002
+														],
+													"rotation": 
+														[
+															1.80372822E-07,
+															302.251068,
+															3.270891E-07
+														]
+												}
+											],
+										"trigger_type": "local"
+									},
+									{
+										"type": "net_actor_node",
+										"inputs": 
+											[
+												{
+													"input_port": "on",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "random",
+																		"random_anims": 
+																			[
+																				"cheetah_idle01",
+																				"cheetah_idle02"
+																			],
+																		"wrap_mode": "loop",
+																		"switch_method": "blend",
+																		"wait_method": "none"
+																	}
+															}
+														]
+												},
+												{
+													"input_port": "off",
+													"actions": 
+														[
+															{
+																"a": "model_animation",
+																"r": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"o": 
+																	[
+																		0,
+																		0,
+																		0
+																	],
+																"uid": "local",
+																"p": 
+																	{
+																		"name": "cheetah_lay",
+																		"wrap_mode": "loop",
+																		"switch_method": "blend",
+																		"wait_method": "none"
+																	}
+															}
+														]
+												}
+											],
+										"outputs": 
+											[
+												{
+													"output_port": "volume_trigger_enter_first",
+													"cooldown": 0.5,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "cheetah_king_mesh",
+																"input_port": "on"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												},
+												{
+													"output_port": "volume_trigger_exit_all",
+													"cooldown": 0.5,
+													"output_port_data": 
+														[
+															{
+																"type": "local_wiring",
+																"actor_id": "cheetah_king_mesh",
+																"input_port": "off"
+															}
+														],
+													"restricted_types": 
+														[
+															"avakin",
+															"petkin"
+														]
+												}
+											]
+									},
+									{
+										"type": "model",
+										"version": 1,
+										"game_asset_url": "sceneref://Room_0/Animals/cheetah_king_mesh",
+										"edit_apartment_animation": "cheetah_idle01",
+										"idle_animation": "cheetah_lay",
+										"idle_wrap_mode": "loop"
+									}
+								],
+							"actions": 
+								[
+									{
+										"a": "position",
+										"o": 
+											[
+												-21.182,
+												1.582,
+												-12.729
+											],
+										"uid": "local"
+									},
+									{
+										"a": "model_set_visible",
+										"uid": "local",
+										"p": 
+											{
+												"method": "Immediate",
+												"visible": true
+											}
+									}
+								]
+						}
+					]
+			}
+		]
+}
